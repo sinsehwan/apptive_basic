@@ -1,6 +1,7 @@
 package apptive.basic.auth.controller;
 
 import apptive.basic.auth.entity.User;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+@Slf4j
 @Controller
 @RequestMapping("/users")
 public class UserController {
@@ -29,6 +31,8 @@ public class UserController {
     @PostMapping("/signup")
     public String signup(@ModelAttribute User user, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model){
         //검증 구현 필요
+
+        log.info("user = {}", user);
 
 
         //성공 로직
